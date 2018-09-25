@@ -1905,7 +1905,7 @@ class Cursor:
                                     if used_buf_len.value < total_buf_len:
                                         ctypes.memset(ctypes.addressof(alloc_buffer) + used_buf_len.value, 0, 1)
                                     value_list.append(buf_cvt_func(from_buffer_u(alloc_buffer)))
-                                elif alloc_buffer.value == '':
+                                elif alloc_buffer.value in ('', b''):
                                     value_list.append('')
                                 else:
                                     value_list.append(buf_cvt_func(alloc_buffer.value))
